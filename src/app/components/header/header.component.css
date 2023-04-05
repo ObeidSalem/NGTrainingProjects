@@ -1,0 +1,15 @@
+.nav{
+    background-color:aliceblue;
+    width: 100%;
+
+}
+
+.nav__ul{
+    display: flex;
+    justify-content: start;
+}
+
+.nav__item{
+    margin: 1em;
+    list-style-type: none;
+}

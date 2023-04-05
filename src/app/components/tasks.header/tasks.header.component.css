@@ -1,0 +1,24 @@
+.tasks{
+    margin: auto;
+    padding: 1em;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+    /* height: 1000px; */
+
+}
+
+.tasks__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+@media only screen and (min-width: 550px) {
+    /* For desktop: */
+    .tasks{
+        width: 500px;
+    
+    }
+
+  }
