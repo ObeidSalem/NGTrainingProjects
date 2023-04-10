@@ -8,8 +8,6 @@ import { Task } from '../../Task';
 })
 export class TasksItemComponent {
   @Input() task!: Task
-  // @Input() text: string = this.task.text;
-  // @Input() day: string = this.task.day;
 
   ngOnInit(): void {
     console.log('Task', this.task)

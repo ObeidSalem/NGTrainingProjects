@@ -1,4 +1,7 @@
-<span class="task">
-    <h3 class="h3">{{ task.text }}</h3>
+<div *ngIf="task" class="task">
+    <div class="task__details">
+        <h3 class="h3">{{ task.text }}</h3>
+        <p class="task__remove">X</p>
+    </div>
     <p class="p">{{ task.day }}</p>
-</span>
+</div>

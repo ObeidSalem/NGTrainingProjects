@@ -1,0 +1,15 @@
+.task{
+    background-color: aliceblue;
+    margin-bottom: 2px;
+    padding: 1px 15px;
+}
+
+.task__details{
+    display: flex;
+    justify-content:space-between
+}
+
+.task__remove{
+    color: red;
+    cursor: pointer;
+}
