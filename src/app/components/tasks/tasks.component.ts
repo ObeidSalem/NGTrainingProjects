@@ -5,10 +5,9 @@ import { Task } from '../../Task';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.css']
+  styleUrls: ['./tasks.component.css'],
 })
-export class TasksComponent{
-
+export class TasksComponent {
   tasks: Task[] = [];
 
   constructor(private taskService: TaskService) {}
@@ -16,12 +15,19 @@ export class TasksComponent{
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks: Task[]): void => {
       this.tasks = tasks;
-    })
+    });
   }
 
   deleteTask(task: Task): void {
-    this.taskService.deleteTasks(task).subscribe((): void => {
-      this.tasks = this.tasks.filter((task => task.id !== task.id));
-    })
+    this.taskService.deleteTask(task).subscribe((): void => {
+      this.tasks = this.tasks.filter((task) => task.id !== task.id);
+    });
+  }
+
+  toggleReminder(task: Task): void {
+    task.reminder = !task.reminder;
+
+    this.taskService.updateTaskReminder(task).subscribe();
+
   }
 }

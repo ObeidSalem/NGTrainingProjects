@@ -9,6 +9,7 @@ import { Task } from '../../Task';
 export class TasksItemComponent {
   @Input() task!: Task
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
 
   ngOnInit(): void {
     // console.log('Task', this.task)
@@ -18,4 +19,7 @@ export class TasksItemComponent {
     this.onDeleteTask.emit(task);
   }
 
+  onToggle(task: Task): void {
+    this.onToggleReminder.emit(task);
+  }
 }

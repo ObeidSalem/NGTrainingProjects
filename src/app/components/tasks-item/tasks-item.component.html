@@ -1,4 +1,4 @@
-<div *ngIf="task" class="task">
+<div [ngClass]="{ reminder: task.reminder }" *ngIf="task" class="task" (dblclick)="onToggle(task)">
   <div class="task__details">
     <h3 class="h3">{{ task.task }}</h3>
     <p (click)="onDelete(task)" class="task__remove">X</p>

@@ -22,9 +22,10 @@ const getTaskById = (req, res) => {
 
 const addTask = (req, res) => {
 
-    const {name} = req.body;
+    const {task, day, reminder} = req.body;
+    console.log("req.body", req.body)
 
-    pool.query(queries.addTask, [name], (err, results) => {
+    pool.query(queries.addTask, [task, day, reminder], (err, results) => {
         if (err) throw err;
         res.status(201).send("Task has been added successfully.! ")
     })
@@ -54,7 +55,7 @@ const removeTaskById = (req, res) => {
 const updateTaskById = (req, res) => {
 
     const id = parseInt(req.params.id);
-    const {name} = req.body;
+    const {task, day, reminder} = req.body;
     
     pool.query(queries.getTaskById, [id], (err, results) => {
         const noTaskFound = !results.rows.length
@@ -62,7 +63,7 @@ const updateTaskById = (req, res) => {
             res.send("No Task found")
         }
 
-        pool.query(queries.updateTaskById, [name, id], (err, results) => {
+        pool.query(queries.updateTaskById, [task, day, reminder, id], (err, results) => {
             if (err) throw err;
             res.status(200).send("Task has been updated successfully.! ")
         })
