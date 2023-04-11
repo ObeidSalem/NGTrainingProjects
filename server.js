@@ -1,7 +1,14 @@
 const express = require('express');
 const taskRoutes = require('./src/app/services/routes');
+const cors = require('cors');
 
 const app = express();
+
+app.use(
+    cors({
+        origin: 'http://localhost:4200'
+    })
+)
 
 app.use(express.json())
 
