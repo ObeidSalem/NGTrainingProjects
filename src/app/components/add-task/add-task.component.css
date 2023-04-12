@@ -1,0 +1,32 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 20px 0;
+}
+
+.form__text{
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__checkbox{
+    margin: 10px 0 10px 0;
+
+}
+
+.form__text__input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid skyblue;
+}
+
+.form__submit{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid skyblue;
+    background-color: deepskyblue;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}

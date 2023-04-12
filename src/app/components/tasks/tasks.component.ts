@@ -22,12 +22,18 @@ export class TasksComponent {
     this.taskService.deleteTask(task).subscribe((): void => {
       this.tasks = this.tasks.filter((task) => task.id !== task.id);
     });
+    window.location.reload()
   }
 
   toggleReminder(task: Task): void {
     task.reminder = !task.reminder;
-
     this.taskService.updateTaskReminder(task).subscribe();
 
   }
+
+  addTask(task: Task): void {
+    this.taskService.addTask(task).subscribe((task) => (this.tasks.push(task)));
+    window.location.reload()
+  }
 }
+

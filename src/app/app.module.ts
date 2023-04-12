@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TasksHeaderComponent } from './components/tasks.header/tasks.header.component';
 import { TasksItemComponent } from './components/tasks-item/tasks-item.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { TasksItemComponent } from './components/tasks-item/tasks-item.component
     TasksComponent,
     ButtonComponent,
     TasksHeaderComponent,
-    TasksItemComponent
+    TasksItemComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
